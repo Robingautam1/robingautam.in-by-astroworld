@@ -1,472 +1,815 @@
 ---
 // Import global styles
-import '../styles/global.css';
+import "../styles/global.css";
 
 // Import React Islands
-import PricingSection from '../components/PricingSection';
-import BookingModal from '../components/BookingModal';
-import DemoModal from '../components/DemoModal';
+import PricingSection from "../components/PricingSection";
+import BookingModal from "../components/BookingModal";
+import DemoModal from "../components/DemoModal";
+import AuthButtons from "../components/AuthButtons";
 
 // Page metadata
 const title = "Robin Gautam | Digital Product Studio for Founders";
-const description = "We build digital systems for the next generation of founders. Professional websites, booking systems, and digital infrastructure that drives growth.";
+const description =
+  "We build digital systems for the next generation of founders. Professional websites, booking systems, and digital infrastructure that drives growth.";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
-<body class="bg-midnight-950 text-white font-sans antialiased noise-bg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- STATIC SEA: Navigation (0kb JS) -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-midnight-950/80 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="#" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
-            <span class="text-white font-bold text-lg">R</span>
+  <body class="bg-midnight-950 text-white font-sans antialiased noise-bg">
+    <!-- STATIC SEA: Navigation (0kb JS) -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-midnight-950/80 backdrop-blur-xl border-b border-white/5"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="#" class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-lg">R</span>
+            </div>
+            <span class="font-semibold text-lg hidden sm:block"
+              >Robin Gautam</span
+            >
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="#process"
+              class="text-sm text-zinc-400 hover:text-white transition-colors"
+              >Process</a
+            >
+            <a
+              href="#work"
+              class="text-sm text-zinc-400 hover:text-white transition-colors"
+              >Work</a
+            >
+            <a
+              href="portfolio/"
+              class="text-sm text-zinc-400 hover:text-white transition-colors"
+              >About</a
+            >
           </div>
-          <span class="font-semibold text-lg hidden sm:block">Robin Gautam</span>
-        </a>
 
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#process" class="text-sm text-zinc-400 hover:text-white transition-colors">Process</a>
-          <a href="#work" class="text-sm text-zinc-400 hover:text-white transition-colors">Work</a>
-          <a href="portfolio/" class="text-sm text-zinc-400 hover:text-white transition-colors">About</a>
+          <div class="flex items-center gap-4">
+            <AuthButtons client:load />
+            <button
+              id="navBookingBtn"
+              class="cta-premium px-6 py-3 bg-accent text-white text-sm font-semibold rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"
+                ></path>
+              </svg>
+              Book Strategy Session
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- STATIC SEA: Hero Section (0kb JS) -->
+    <section class="min-h-screen pt-32 pb-20 relative overflow-hidden">
+      <!-- Background Glows -->
+      <div
+        class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"
+      >
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div
+          class="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center min-h-[70vh]"
+        >
+          <!-- Left Side -->
+          <div class="space-y-8">
+            <!-- Badge -->
+            <div
+              class="animate-on-load animate-slide-up stagger-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-800 border border-white/10"
+            >
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
+              ></span>
+              <span class="text-sm text-zinc-400"
+                >Available for new projects</span
+              >
+            </div>
+
+            <!-- Headline -->
+            <h1
+              class="animate-on-load animate-slide-up stagger-2 text-fluid-hero font-bold leading-[1.1] tracking-tight"
+            >
+              We build <span class="gradient-text">digital systems</span> for the
+              next generation of founders.
+            </h1>
+
+            <!-- Subheadline -->
+            <p
+              class="animate-on-load animate-slide-up stagger-3 text-lg sm:text-xl text-zinc-400 max-w-lg leading-relaxed"
+            >
+              From idea to launch in weeks, not months. We architect the digital
+              infrastructure your business needs to scale with confidence.
+            </p>
+
+            <!-- CTAs -->
+            <div
+              class="animate-on-load animate-slide-up stagger-4 flex flex-wrap gap-4"
+            >
+              <button
+                id="heroBookingBtn"
+                class="group px-8 py-4 bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-all hover:scale-105 flex items-center gap-2"
+              >
+                Get Started
+                <svg
+                  class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </button>
+              <a
+                href="#work"
+                class="px-8 py-4 border border-white/10 text-white font-medium rounded-xl hover:bg-white/5 transition-all"
+              >
+                View Work
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="animate-on-load animate-slide-up stagger-5 flex gap-12 pt-8 border-t border-white/5"
+            >
+              <div>
+                <div class="text-3xl font-bold text-white">15+</div>
+                <div class="text-sm text-zinc-500">Projects Delivered</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-white">100%</div>
+                <div class="text-sm text-zinc-500">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Mac Window Card -->
+          <div class="relative flex justify-center lg:justify-end">
+            <div class="float-3d animate-float">
+              <!-- Mac Window -->
+              <div
+                class="glass-card rounded-2xl overflow-hidden w-full max-w-[420px] shadow-2xl shadow-accent/20"
+              >
+                <!-- Window Header -->
+                <div
+                  class="flex items-center gap-2 px-4 py-3 bg-midnight-800/80 border-b border-white/5"
+                >
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                  <span class="ml-4 text-sm text-zinc-500">Control Center</span>
+                </div>
+
+                <!-- Window Content -->
+                <div class="p-6">
+                  <!-- Status Banner -->
+                  <div
+                    class="flex items-center gap-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20 mb-6"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-5 h-5 text-green-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-green-400">
+                        System Online
+                      </div>
+                      <div class="text-sm text-zinc-400">
+                        All services operational
+                      </div>
+                    </div>
+                    <div
+                      class="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse"
+                    >
+                    </div>
+                  </div>
+
+                  <!-- Metrics Grid -->
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-midnight-800/50 rounded-xl p-4">
+                      <div class="text-xs text-zinc-500 mb-1">Performance</div>
+                      <div class="text-2xl font-bold text-accent">98%</div>
+                    </div>
+                    <div class="bg-midnight-800/50 rounded-xl p-4">
+                      <div class="text-xs text-zinc-500 mb-1">SEO Score</div>
+                      <div class="text-2xl font-bold text-white">100</div>
+                    </div>
+                    <div class="bg-midnight-800/50 rounded-xl p-4">
+                      <div class="text-xs text-zinc-500 mb-1">Load Time</div>
+                      <div class="text-2xl font-bold text-white">1.2s</div>
+                    </div>
+                    <div class="bg-midnight-800/50 rounded-xl p-4">
+                      <div class="text-xs text-zinc-500 mb-1">Uptime</div>
+                      <div class="text-2xl font-bold text-green-400">99.9%</div>
+                    </div>
+                  </div>
+
+                  <!-- Progress Bar -->
+                  <div class="mt-6 space-y-2">
+                    <div class="flex justify-between text-sm">
+                      <span class="text-zinc-500">Launch Progress</span>
+                      <span class="text-white font-medium">Complete</span>
+                    </div>
+                    <div
+                      class="h-2 bg-midnight-800 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full w-full bg-gradient-to-r from-accent to-purple-500 rounded-full"
+                      >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATIC SEA: Trust Factors Section (0kb JS) -->
+    <section class="py-24 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-accent text-sm font-semibold uppercase tracking-widest"
+            >Why Founders Trust Us</span
+          >
+          <h2 class="text-fluid-display font-bold mt-4 mb-4">
+            The Trust Factors
+          </h2>
+          <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+            Not just promises. Here's what makes us different.
+          </p>
         </div>
 
-        <button id="navBookingBtn" class="cta-premium px-6 py-3 bg-accent text-white text-sm font-semibold rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Business-First Architecture -->
+          <div
+            class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-accent/20 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-7 h-7 text-accent"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">
+                Business-First Architecture
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                We don't just code; we align digital systems with your revenue
+                goals. Built by MBA strategists.
+              </p>
+            </div>
+          </div>
+
+          <!-- Speed Without Debt -->
+          <div
+            class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-yellow-500/20 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">
+                Speed Without Debt
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Rapid deployment using modern frameworks (Next.js), not buggy
+                templates. Clean code that scales.
+              </p>
+            </div>
+          </div>
+
+          <!-- Transparent Delivery -->
+          <div
+            class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-emerald-500/20 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-7 h-7 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">
+                Transparent Delivery
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                No hidden costs. You get a live Trello/Notion board to track
+                every pixel of your project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATIC SEA: Process Section (0kb JS) -->
+    <section id="process" class="py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <span
+            class="text-accent text-sm font-semibold uppercase tracking-widest"
+            >Our Process</span
+          >
+          <h2 class="text-fluid-display font-bold mt-4 mb-6">
+            From Vision to Launch in 3 Steps
+          </h2>
+          <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+            A battle-tested framework that transforms ideas into scalable
+            digital products.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1: Audit -->
+          <div class="group">
+            <div
+              class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full"
+            >
+              <div
+                class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors"
+              >
+                <svg
+                  class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+              </div>
+              <div class="text-xs text-accent font-semibold mb-3">STEP 01</div>
+              <h3 class="text-2xl font-bold mb-4">Audit</h3>
+              <p class="text-zinc-400 leading-relaxed">
+                Deep-dive into your business, users, and market. We identify
+                gaps and the fastest path to results.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2: Build -->
+          <div class="group">
+            <div
+              class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full"
+            >
+              <div
+                class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors"
+              >
+                <svg
+                  class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <path d="M8 9l3 3-3 3"></path>
+                  <path d="M13 15h3"></path>
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                </svg>
+              </div>
+              <div class="text-xs text-accent font-semibold mb-3">STEP 02</div>
+              <h3 class="text-2xl font-bold mb-4">Build</h3>
+              <p class="text-zinc-400 leading-relaxed">
+                Agile design and development sprints. We ship fast, iterate
+                faster, and keep you in the loop.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3: Scale -->
+          <div class="group">
+            <div
+              class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full"
+            >
+              <div
+                class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors"
+              >
+                <svg
+                  class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <path
+                    d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+                  ></path>
+                  <path
+                    d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-xs text-accent font-semibold mb-3">STEP 03</div>
+              <h3 class="text-2xl font-bold mb-4">Scale</h3>
+              <p class="text-zinc-400 leading-relaxed">
+                Launch, measure, and optimize. We ensure your product keeps
+                winning with ongoing support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATIC SEA: Work Section (0kb JS) -->
+    <section id="work" class="py-32 bg-midnight-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+        >
+          <div>
+            <span
+              class="text-accent text-sm font-semibold uppercase tracking-widest"
+              >Recent Work</span
+            >
+            <h2 class="text-fluid-display font-bold mt-4">
+              Live Project Demos
+            </h2>
+            <p class="text-zinc-400 mt-3">Hover to see them in action</p>
+          </div>
+          <a
+            href="portfolio/"
+            class="mt-6 md:mt-0 text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
+          >
+            View All Projects
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-12 gap-8">
+          <!-- CashCurious - Large Card -->
+          <div class="col-span-12 lg:col-span-7 group cursor-pointer">
+            <div class="relative h-full">
+              <div
+                class="bg-midnight-800/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:shadow-accent/20 transition-all duration-500"
+              >
+                <div
+                  class="flex items-center gap-3 px-4 py-3 bg-midnight-950/50 border-b border-white/5"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <div
+                    class="flex-1 flex items-center gap-2 px-3 py-1.5 bg-midnight-900/80 rounded-lg border border-white/5"
+                  >
+                    <svg
+                      class="w-3 h-3 text-zinc-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      ></path>
+                    </svg>
+                    <span class="text-xs text-zinc-500 truncate"
+                      >cash-curious.vercel.app</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="relative aspect-[16/10] bg-gradient-to-br from-emerald-900/30 to-midnight-950 overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 flex items-center justify-center p-12"
+                  >
+                    <div class="w-full space-y-8">
+                      <div class="flex items-center gap-4 mb-6">
+                        <div
+                          class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center"
+                        >
+                          <span class="text-3xl">₹</span>
+                        </div>
+                        <div>
+                          <div class="text-2xl font-bold text-white">
+                            CashCurious
+                          </div>
+                          <div class="text-zinc-400">
+                            Financial Literacy Platform
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-3 gap-4">
+                        <div
+                          class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm"
+                        >
+                          <div class="text-2xl font-bold text-emerald-400">
+                            50K+
+                          </div>
+                          <div class="text-xs text-zinc-400">Monthly Users</div>
+                        </div>
+                        <div
+                          class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm"
+                        >
+                          <div class="text-2xl font-bold text-white">4.8★</div>
+                          <div class="text-xs text-zinc-400">App Rating</div>
+                        </div>
+                        <div
+                          class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm"
+                        >
+                          <div class="text-2xl font-bold text-blue-400">A+</div>
+                          <div class="text-xs text-zinc-400">Performance</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QuantMaster - Small Card -->
+          <div class="col-span-12 lg:col-span-5 group cursor-pointer">
+            <div class="relative h-full">
+              <div
+                class="bg-midnight-800/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:shadow-purple-500/20 transition-all duration-500 h-full"
+              >
+                <div
+                  class="flex items-center gap-3 px-4 py-3 bg-midnight-950/50 border-b border-white/5"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <div
+                    class="flex-1 flex items-center gap-2 px-3 py-1.5 bg-midnight-900/80 rounded-lg border border-white/5"
+                  >
+                    <svg
+                      class="w-3 h-3 text-zinc-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      ></path>
+                    </svg>
+                    <span class="text-xs text-zinc-500 truncate"
+                      >quantmaster.io</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="relative aspect-[16/10] bg-gradient-to-br from-purple-900/30 to-midnight-950 overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/5 flex items-center justify-center p-8"
+                  >
+                    <div class="w-full space-y-6">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center"
+                        >
+                          <svg
+                            class="w-6 h-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div>
+                          <div class="text-xl font-bold text-white">
+                            QuantMaster
+                          </div>
+                          <div class="text-sm text-zinc-400">
+                            Trading Dashboard
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-2 gap-3">
+                        <div
+                          class="bg-midnight-800/50 rounded-xl p-3 backdrop-blur-sm"
+                        >
+                          <div class="text-lg font-bold text-purple-400">
+                            +127%
+                          </div>
+                          <div class="text-xs text-zinc-400">Returns</div>
+                        </div>
+                        <div
+                          class="bg-midnight-800/50 rounded-xl p-3 backdrop-blur-sm"
+                        >
+                          <div class="text-lg font-bold text-white">
+                            Real-time
+                          </div>
+                          <div class="text-xs text-zinc-400">Data Sync</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REACT ISLAND: Pricing Section (Interactive) -->
+    <PricingSection client:load />
+
+    <!-- STATIC SEA: CTA Section (0kb JS - but triggers React modal) -->
+    <section class="py-32">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-fluid-display font-bold mb-6">
+          Ready to build something great?
+        </h2>
+        <p class="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
+          Let's discuss your project and see how we can help transform your
+          vision into reality.
+        </p>
+        <button
+          id="ctaBookingBtn"
+          class="cta-premium px-10 py-5 bg-accent text-white font-semibold rounded-2xl transition-all hover:scale-105 text-lg inline-flex items-center gap-3"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2L13.09 8.26L18 7L14.74 10.91L18 17L13.09 14.26L12 22L10.91 14.26L6 17L9.26 10.91L6 7L10.91 8.26L12 2Z"
+            ></path>
           </svg>
-          Book Strategy Session
+          Book a Strategy Session
         </button>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <!-- STATIC SEA: Hero Section (0kb JS) -->
-  <section class="min-h-screen pt-32 pb-20 relative overflow-hidden">
-    <!-- Background Glows -->
-    <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] pointer-events-none"></div>
-    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center min-h-[70vh]">
-        <!-- Left Side -->
-        <div class="space-y-8">
-          <!-- Badge -->
-          <div class="animate-on-load animate-slide-up stagger-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-midnight-800 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span class="text-sm text-zinc-400">Available for new projects</span>
-          </div>
-
-          <!-- Headline -->
-          <h1 class="animate-on-load animate-slide-up stagger-2 text-fluid-hero font-bold leading-[1.1] tracking-tight">
-            We build <span class="gradient-text">digital systems</span> for the next generation of founders.
-          </h1>
-
-          <!-- Subheadline -->
-          <p class="animate-on-load animate-slide-up stagger-3 text-lg sm:text-xl text-zinc-400 max-w-lg leading-relaxed">
-            From idea to launch in weeks, not months. We architect the digital infrastructure your business needs to scale with confidence.
-          </p>
-
-          <!-- CTAs -->
-          <div class="animate-on-load animate-slide-up stagger-4 flex flex-wrap gap-4">
-            <button id="heroBookingBtn" class="group px-8 py-4 bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-all hover:scale-105 flex items-center gap-2">
-              Get Started
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-            <a href="#work" class="px-8 py-4 border border-white/10 text-white font-medium rounded-xl hover:bg-white/5 transition-all">
-              View Work
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div class="animate-on-load animate-slide-up stagger-5 flex gap-12 pt-8 border-t border-white/5">
-            <div>
-              <div class="text-3xl font-bold text-white">15+</div>
-              <div class="text-sm text-zinc-500">Projects Delivered</div>
+    <!-- STATIC SEA: Footer (0kb JS) -->
+    <footer class="py-12 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-sm">R</span>
             </div>
-            <div>
-              <div class="text-3xl font-bold text-white">100%</div>
-              <div class="text-sm text-zinc-500">Client Satisfaction</div>
-            </div>
+            <span class="font-semibold">Robin Gautam</span>
           </div>
-        </div>
-
-        <!-- Right Side - Mac Window Card -->
-        <div class="relative flex justify-center lg:justify-end">
-          <div class="float-3d animate-float">
-            <!-- Mac Window -->
-            <div class="glass-card rounded-2xl overflow-hidden w-full max-w-[420px] shadow-2xl shadow-accent/20">
-              <!-- Window Header -->
-              <div class="flex items-center gap-2 px-4 py-3 bg-midnight-800/80 border-b border-white/5">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                <span class="ml-4 text-sm text-zinc-500">Control Center</span>
-              </div>
-
-              <!-- Window Content -->
-              <div class="p-6">
-                <!-- Status Banner -->
-                <div class="flex items-center gap-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20 mb-6">
-                  <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="font-semibold text-green-400">System Online</div>
-                    <div class="text-sm text-zinc-400">All services operational</div>
-                  </div>
-                  <div class="ml-auto w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                </div>
-
-                <!-- Metrics Grid -->
-                <div class="grid grid-cols-2 gap-3">
-                  <div class="bg-midnight-800/50 rounded-xl p-4">
-                    <div class="text-xs text-zinc-500 mb-1">Performance</div>
-                    <div class="text-2xl font-bold text-accent">98%</div>
-                  </div>
-                  <div class="bg-midnight-800/50 rounded-xl p-4">
-                    <div class="text-xs text-zinc-500 mb-1">SEO Score</div>
-                    <div class="text-2xl font-bold text-white">100</div>
-                  </div>
-                  <div class="bg-midnight-800/50 rounded-xl p-4">
-                    <div class="text-xs text-zinc-500 mb-1">Load Time</div>
-                    <div class="text-2xl font-bold text-white">1.2s</div>
-                  </div>
-                  <div class="bg-midnight-800/50 rounded-xl p-4">
-                    <div class="text-xs text-zinc-500 mb-1">Uptime</div>
-                    <div class="text-2xl font-bold text-green-400">99.9%</div>
-                  </div>
-                </div>
-
-                <!-- Progress Bar -->
-                <div class="mt-6 space-y-2">
-                  <div class="flex justify-between text-sm">
-                    <span class="text-zinc-500">Launch Progress</span>
-                    <span class="text-white font-medium">Complete</span>
-                  </div>
-                  <div class="h-2 bg-midnight-800 rounded-full overflow-hidden">
-                    <div class="h-full w-full bg-gradient-to-r from-accent to-purple-500 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="flex items-center gap-6 text-sm text-zinc-400">
+            <a
+              href="mailto:hello@robingautam.in"
+              class="hover:text-white transition-colors">hello@robingautam.in</a
+            >
+            <a href="portfolio/" class="hover:text-white transition-colors"
+              >Portfolio</a
+            >
+          </div>
+          <div class="text-sm text-zinc-500">
+            © 2026 Robin Gautam. All rights reserved.
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- STATIC SEA: Trust Factors Section (0kb JS) -->
-  <section class="py-24 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="text-accent text-sm font-semibold uppercase tracking-widest">Why Founders Trust Us</span>
-        <h2 class="text-fluid-display font-bold mt-4 mb-4">The Trust Factors</h2>
-        <p class="text-zinc-400 text-lg max-w-2xl mx-auto">Not just promises. Here's what makes us different.</p>
-      </div>
+    <!-- REACT ISLANDS: Modals (Lazy Loaded) -->
+    <BookingModal client:only="react" />
+    <DemoModal client:only="react" />
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Business-First Architecture -->
-        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-accent/20 transition-all duration-500">
-          <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <div class="relative z-10">
-            <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-white">Business-First Architecture</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">We don't just code; we align digital systems with your revenue goals. Built by MBA strategists.</p>
-          </div>
-        </div>
-
-        <!-- Speed Without Debt -->
-        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-yellow-500/20 transition-all duration-500">
-          <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <div class="relative z-10">
-            <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-white">Speed Without Debt</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">Rapid deployment using modern frameworks (Next.js), not buggy templates. Clean code that scales.</p>
-          </div>
-        </div>
-
-        <!-- Transparent Delivery -->
-        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-midnight-800 to-midnight-950 p-8 border border-white/5 hover:border-emerald-500/20 transition-all duration-500">
-          <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <div class="relative z-10">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-white">Transparent Delivery</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">No hidden costs. You get a live Trello/Notion board to track every pixel of your project.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATIC SEA: Process Section (0kb JS) -->
-  <section id="process" class="py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <span class="text-accent text-sm font-semibold uppercase tracking-widest">Our Process</span>
-        <h2 class="text-fluid-display font-bold mt-4 mb-6">From Vision to Launch in 3 Steps</h2>
-        <p class="text-zinc-400 text-lg max-w-2xl mx-auto">A battle-tested framework that transforms ideas into scalable digital products.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Step 1: Audit -->
-        <div class="group">
-          <div class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full">
-            <div class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors">
-              <svg class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-            </div>
-            <div class="text-xs text-accent font-semibold mb-3">STEP 01</div>
-            <h3 class="text-2xl font-bold mb-4">Audit</h3>
-            <p class="text-zinc-400 leading-relaxed">Deep-dive into your business, users, and market. We identify gaps and the fastest path to results.</p>
-          </div>
-        </div>
-
-        <!-- Step 2: Build -->
-        <div class="group">
-          <div class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full">
-            <div class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors">
-              <svg class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                <path d="M8 9l3 3-3 3" />
-                <path d="M13 15h3" />
-                <rect x="3" y="4" width="18" height="16" rx="2" />
-              </svg>
-            </div>
-            <div class="text-xs text-accent font-semibold mb-3">STEP 02</div>
-            <h3 class="text-2xl font-bold mb-4">Build</h3>
-            <p class="text-zinc-400 leading-relaxed">Agile design and development sprints. We ship fast, iterate faster, and keep you in the loop.</p>
-          </div>
-        </div>
-
-        <!-- Step 3: Scale -->
-        <div class="group">
-          <div class="glass-card rounded-3xl p-8 hover:border-accent/20 transition-all duration-300 h-full">
-            <div class="w-16 h-16 rounded-2xl bg-midnight-800 border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent/30 transition-colors">
-              <svg class="w-8 h-8 text-zinc-400 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-              </svg>
-            </div>
-            <div class="text-xs text-accent font-semibold mb-3">STEP 03</div>
-            <h3 class="text-2xl font-bold mb-4">Scale</h3>
-            <p class="text-zinc-400 leading-relaxed">Launch, measure, and optimize. We ensure your product keeps winning with ongoing support.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATIC SEA: Work Section (0kb JS) -->
-  <section id="work" class="py-32 bg-midnight-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
-        <div>
-          <span class="text-accent text-sm font-semibold uppercase tracking-widest">Recent Work</span>
-          <h2 class="text-fluid-display font-bold mt-4">Live Project Demos</h2>
-          <p class="text-zinc-400 mt-3">Hover to see them in action</p>
-        </div>
-        <a href="portfolio/" class="mt-6 md:mt-0 text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-          View All Projects
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Bento Grid -->
-      <div class="grid grid-cols-12 gap-8">
-        <!-- CashCurious - Large Card -->
-        <div class="col-span-12 lg:col-span-7 group cursor-pointer">
-          <div class="relative h-full">
-            <div class="bg-midnight-800/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:shadow-accent/20 transition-all duration-500">
-              <div class="flex items-center gap-3 px-4 py-3 bg-midnight-950/50 border-b border-white/5">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                </div>
-                <div class="flex-1 flex items-center gap-2 px-3 py-1.5 bg-midnight-900/80 rounded-lg border border-white/5">
-                  <svg class="w-3 h-3 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                  <span class="text-xs text-zinc-500 truncate">cash-curious.vercel.app</span>
-                </div>
-              </div>
-              <div class="relative aspect-[16/10] bg-gradient-to-br from-emerald-900/30 to-midnight-950 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 flex items-center justify-center p-12">
-                  <div class="w-full space-y-8">
-                    <div class="flex items-center gap-4 mb-6">
-                      <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                        <span class="text-3xl">₹</span>
-                      </div>
-                      <div>
-                        <div class="text-2xl font-bold text-white">CashCurious</div>
-                        <div class="text-zinc-400">Financial Literacy Platform</div>
-                      </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4">
-                      <div class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-emerald-400">50K+</div>
-                        <div class="text-xs text-zinc-400">Monthly Users</div>
-                      </div>
-                      <div class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-white">4.8★</div>
-                        <div class="text-xs text-zinc-400">App Rating</div>
-                      </div>
-                      <div class="bg-midnight-800/50 rounded-xl p-4 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-blue-400">A+</div>
-                        <div class="text-xs text-zinc-400">Performance</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- QuantMaster - Small Card -->
-        <div class="col-span-12 lg:col-span-5 group cursor-pointer">
-          <div class="relative h-full">
-            <div class="bg-midnight-800/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:shadow-purple-500/20 transition-all duration-500 h-full">
-              <div class="flex items-center gap-3 px-4 py-3 bg-midnight-950/50 border-b border-white/5">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                </div>
-                <div class="flex-1 flex items-center gap-2 px-3 py-1.5 bg-midnight-900/80 rounded-lg border border-white/5">
-                  <svg class="w-3 h-3 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                  <span class="text-xs text-zinc-500 truncate">quantmaster.io</span>
-                </div>
-              </div>
-              <div class="relative aspect-[16/10] bg-gradient-to-br from-purple-900/30 to-midnight-950 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/5 flex items-center justify-center p-8">
-                  <div class="w-full space-y-6">
-                    <div class="flex items-center gap-3">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div class="text-xl font-bold text-white">QuantMaster</div>
-                        <div class="text-sm text-zinc-400">Trading Dashboard</div>
-                      </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                      <div class="bg-midnight-800/50 rounded-xl p-3 backdrop-blur-sm">
-                        <div class="text-lg font-bold text-purple-400">+127%</div>
-                        <div class="text-xs text-zinc-400">Returns</div>
-                      </div>
-                      <div class="bg-midnight-800/50 rounded-xl p-3 backdrop-blur-sm">
-                        <div class="text-lg font-bold text-white">Real-time</div>
-                        <div class="text-xs text-zinc-400">Data Sync</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REACT ISLAND: Pricing Section (Interactive) -->
-  <PricingSection client:load />
-
-  <!-- STATIC SEA: CTA Section (0kb JS - but triggers React modal) -->
-  <section class="py-32">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-fluid-display font-bold mb-6">Ready to build something great?</h2>
-      <p class="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">Let's discuss your project and see how we can help transform your vision into reality.</p>
-      <button id="ctaBookingBtn" class="cta-premium px-10 py-5 bg-accent text-white font-semibold rounded-2xl transition-all hover:scale-105 text-lg inline-flex items-center gap-3">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L13.09 8.26L18 7L14.74 10.91L18 17L13.09 14.26L12 22L10.91 14.26L6 17L9.26 10.91L6 7L10.91 8.26L12 2Z" />
-        </svg>
-        Book a Strategy Session
-      </button>
-    </div>
-  </section>
-
-  <!-- STATIC SEA: Footer (0kb JS) -->
-  <footer class="py-12 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
-            <span class="text-white font-bold text-sm">R</span>
-          </div>
-          <span class="font-semibold">Robin Gautam</span>
-        </div>
-        <div class="flex items-center gap-6 text-sm text-zinc-400">
-          <a href="mailto:hello@robingautam.in" class="hover:text-white transition-colors">hello@robingautam.in</a>
-          <a href="portfolio/" class="hover:text-white transition-colors">Portfolio</a>
-        </div>
-        <div class="text-sm text-zinc-500">
-          © 2026 Robin Gautam. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- REACT ISLANDS: Modals (Lazy Loaded) -->
-  <BookingModal client:only="react" />
-  <DemoModal client:only="react" />
-
-  <!-- Minimal JS for static button triggers -->
-  <script>
-    // Trigger animations on load
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.animate-on-load').forEach(el => {
-        el.classList.remove('opacity-0');
+    <!-- Minimal JS for static button triggers -->
+    <script>
+      // Trigger animations on load
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".animate-on-load").forEach((el) => {
+          el.classList.remove("opacity-0");
+        });
       });
-    });
 
-    // Wire up static booking buttons to React modal
-    const bookingBtns = ['navBookingBtn', 'heroBookingBtn', 'ctaBookingBtn'];
-    bookingBtns.forEach(id => {
-      document.getElementById(id)?.addEventListener('click', () => {
-        window.dispatchEvent(new CustomEvent('open-booking-modal'));
+      // Wire up static booking buttons to React modal
+      const bookingBtns = ["navBookingBtn", "heroBookingBtn", "ctaBookingBtn"];
+      bookingBtns.forEach((id) => {
+        document.getElementById(id)?.addEventListener("click", () => {
+          window.dispatchEvent(new CustomEvent("open-booking-modal"));
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
